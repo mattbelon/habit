@@ -25,8 +25,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.habits.corepresentation.HabitButton
-import com.example.habits.corepresentation.HabitTitle
+import com.example.habits.core.presentation.HabitButton
+import com.example.habits.core.presentation.HabitTitle
 import com.example.habits.onboarding.presentation.OnboardingPagerInformation
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager

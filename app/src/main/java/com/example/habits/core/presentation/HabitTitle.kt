@@ -1,4 +1,4 @@
-package com.example.habits.corepresentation
+package com.example.habits.core.presentation
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

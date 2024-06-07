@@ -5,6 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 
@@ -35,11 +36,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -82,7 +83,7 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.45")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     kapt("com.google.dagger:hilt-compiler:2.45")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
 
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
@@ -91,11 +92,37 @@ dependencies {
 
 
     //Get day of week api 25 or lower
-    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.2")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.2")
 
     val time_picker = "1.1.0"
-    implementation ("com.maxkeppeler.sheets-compose-dialogs:core:$time_picker")
-    implementation ("com.maxkeppeler.sheets-compose-dialogs:clock:$time_picker")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:core:$time_picker")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:clock:$time_picker")
+
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    //room
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    implementation("com.squareup.moshi:moshi:1.15.1")
+
+    // retrofit
+    val retrofit_version = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    val workmanager_version = "2.8.0"
+
+    implementation("androidx.work:work-runtime-ktx:$workmanager_version")
+    implementation("androidx.hilt:hilt-work:1.2.0")
+
+    
 
 }
 

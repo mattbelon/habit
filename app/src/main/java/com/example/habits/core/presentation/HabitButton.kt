@@ -1,4 +1,4 @@
-package com.example.habits.corepresentation
+package com.example.habits.core.presentation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,14 +12,21 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HabitButton(
-    text:String,
-    modifier:Modifier = Modifier,
-    onClick:()->Unit
-){
-    Button(onClick = onClick, modifier, shape = RoundedCornerShape(8.dp)) {
-        Text(text = text, style = MaterialTheme.typography.bodyMedium.copy(
-            fontWeight = FontWeight.Bold
-        ),
+    text: String,
+    modifier: Modifier = Modifier,
+    isEnabled: Boolean = true,
+    onClick: () -> Unit
+) {
+    Button(
+        onClick = onClick,
+        modifier = modifier,
+        shape = RoundedCornerShape(8.dp),
+        enabled = isEnabled
+    ) {
+        Text(
+            text = text, style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.Bold
+            ),
             modifier = Modifier.padding(6.dp)
         )
     }
